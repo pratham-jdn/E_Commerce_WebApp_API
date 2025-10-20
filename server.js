@@ -7,6 +7,9 @@ import cartRouter from "./Routes/cart.js";
 import addressRouter from "./Routes/address.js";
 import paymentRouter from "./Routes/payment.js";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
@@ -40,7 +43,7 @@ app.use("/api/payment", paymentRouter);
 
 mongoose
   .connect(
-    "mongodb+srv://2003prathamkumar_db_user:IO6H8z5iaee7sjvj@cluster0.lbjc0lt.mongodb.net",
+    process.env.MONGO_URI,
     { dbName: "MERN_E_Commerce" }
   )
   .then(() => console.log("MongoDB Connected Succssfully...!"))
