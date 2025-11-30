@@ -1,6 +1,5 @@
 import express from "express";
 import mongoose from "mongoose";
-import bodyParser from "express";
 import userRouter from "./Routes/user.js";
 import productRouter from "./Routes/product.js";
 import cartRouter from "./Routes/cart.js";
@@ -13,42 +12,38 @@ dotenv.config();
 
 const app = express();
 
-app.use(bodyParser.json());
-
+// --- FIX 1: CORS MUST COME BEFORE ANYTHING ELSE ---
 app.use(cors({
-  origin: true,
+  origin: "https://e-commerce-web-app-frontend-six.vercel.app",   // <-- FIXED
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization", "Auth"],
   credentials: true
 }));
 
+// Preflight
 app.options("*", cors());
+
+// --- FIX 2: Correct JSON parser ---
+app.use(express.json());
+
 
 // home testing route
 app.get("/", (req, res) => res.json({ messge: "This is home route" }));
 
-// user Router
+// Routers
 app.use("/api/user", userRouter);
-
-// product Router
 app.use("/api/product", productRouter);
-
-// cart Router
 app.use("/api/cart", cartRouter);
-
-// address Router
 app.use("/api/address", addressRouter);
-
-// payment Router
 app.use("/api/payment", paymentRouter);
 
+// MongoDB
 mongoose
-  .connect(
-    process.env.MONGO_URI,
-    { dbName: "MERN_E_Commerce" }
-  )
-  .then(() => console.log("MongoDB Connected Succssfully...!"))
+  .connect(process.env.MONGO_URI, { dbName: "MERN_E_Commerce" })
+  .then(() => console.log("MongoDB Connected Successfully"))
   .catch((err) => console.log(err));
 
 const port = process.env.PORT || 1000;
-app.listen(port, () => console.log(`✅ Server is running on port ${port}`));
+app.listen(port, () =>
+  console.log(`Server is running on port ${port}`)
+);
