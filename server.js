@@ -15,13 +15,12 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use(
-  cors({
-    origin: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: "https://e-commerce-web-app-frontend-six.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+  allowedHeaders: ["Content-Type", "Authorization", "Auth"],
+  credentials: true
+}));
 
 // home testing route
 app.get("/", (req, res) => res.json({ messge: "This is home route" }));
