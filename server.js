@@ -22,6 +22,8 @@ app.use(cors({
   credentials: true
 }));
 
+app.options("*", cors());
+
 // home testing route
 app.get("/", (req, res) => res.json({ messge: "This is home route" }));
 
