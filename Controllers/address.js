@@ -20,5 +20,6 @@ export const addAddress = async (req, res) => {
 
 export const getAddress = async (req,res)=>{
     let address = await Address.find({userId:req.user}).sort({createdAt:-1})
+    console.log("user address found ",address)
     res.json({message:'address', userAddress:address[0]})
 }
