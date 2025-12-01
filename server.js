@@ -16,7 +16,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://e-commerce-webapp-frontend-h5je.onrender.com",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization", "Auth"],
   credentials: true
