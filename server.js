@@ -16,7 +16,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(cors({
-  origin: "https://e-commerce-webapp-frontend-h5je.onrender.com",
+  origin: "https://e-commerce-web-app-frontend-six.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization", "Auth"],
   credentials: true
