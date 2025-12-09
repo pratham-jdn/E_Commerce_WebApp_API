@@ -7,7 +7,7 @@ It provides secure REST APIs for user authentication, product management, orders
 ---
 
 ## 🚀 Live API URL
-👉 **[https://e-commerce-webapp-api.onrender.com](https://e-commerce-webapp-api.onrender.com)**
+👉 **[https://e-commerce-webapp-y36e.onrender.com](https://e-commerce-webapp-y36e.onrender.com)**
 
 ---
 
