@@ -2,12 +2,12 @@
 
 This is the **Backend API** for the [E-Commerce WebApp Frontend](https://github.com/pratham-jdn/E_Commerce_WebApp_Frontend), built using **Node.js**, **Express**, **MongoDB**, and **Razorpay** for payment processing.
 
-It provides secure REST APIs for user authentication, product management, orders, and payment verification.
+It provides **secure REST APIs** with **JWT-based authentication**, **role-based authorization (Admin/User)**, product management, orders, and payment verification.
 
 ---
 
 ## 🚀 Live API URL
-👉 **[https://e-commerce-webapp-y36e.onrender.com](https://e-commerce-webapp-y36e.onrender.com)**
+👉 **https://e-commerce-api-e87l.onrender.com**
 
 ---
 
@@ -28,33 +28,46 @@ It provides secure REST APIs for user authentication, product management, orders
 
 ## ⚙️ Features
 
+### 👤 User APIs
 ✅ User Registration & Login (JWT-based Authentication)  
-✅ Product CRUD APIs  
+✅ Product Listing APIs  
 ✅ Shopping Cart Management  
-✅ Order Creation & Verification  
-✅ Razorpay Payment Integration  
+✅ Shipping Address Management  
+✅ Order Creation & History  
+✅ Razorpay Payment Checkout & Verification  
 ✅ Secure Payment Signature Validation  
-✅ User-specific Orders  
-✅ Admin Access for All Orders  
-✅ Fully Integrated with Frontend  
+
+### 👑 Admin APIs (Role-Based Access)
+✅ Role-based authorization (Admin / User)  
+✅ Admin-only protected routes  
+✅ Add, Update, Delete Products  
+✅ Fetch all products (Admin Dashboard)  
+✅ Fetch all users (Admin access)  
+✅ Admin access control using middleware  
 
 ---
 
-## 📁 Folder Structure
+## 🔐 Security & Authorization
+- JWT-based authentication using middleware  
+- Role-based authorization (`Admin` / `User`)  
+- Protected routes for admin operations  
+- Secure environment variable handling  
 
-## install dependencies
-npm install
-
-## Run the server in development mode
-node server.js
-
+---
 
 🧪 Deployment
+
 Backend deployed on Render
+
 MongoDB hosted on MongoDB Atlas
+
 Razorpay test mode integration active
 
+GitHub-based auto deployment enabled
+
 🧑‍💻 Developer
+
 👨‍💻 Pratham Kumar
 📍 MERN Stack Developer
 📧 prathamjdn@gmail.com
+
